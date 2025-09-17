@@ -1,0 +1,15 @@
+[Unit]
+Description=Ibis: federated online encyclopedia
+After=network.target
+
+[Service]
+Type=simple
+User=__APP__
+Group=__APP__
+Environment=LEPTOS_SITE_ADDR=127.0.0.1:__PORT__
+WorkingDirectory=__INSTALL_DIR__/
+ExecStart=__INSTALL_DIR__/ibis
+StandardError=inherit
+
+[Install]
+WantedBy=multi-user.target
